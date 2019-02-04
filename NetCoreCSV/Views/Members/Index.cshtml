@@ -1,0 +1,15 @@
+﻿@model IEnumerable<NetCoreCSV.Models.Member>
+@using NetCoreCSV.Controllers
+
+@{
+  ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<ul>
+  @foreach (var member in Model) {
+    <li>@member.FullName</li>
+  }
+</ul>
+<a asp-action="@nameof(MembersController.DownloadCsv)">download</a>
